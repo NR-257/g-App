@@ -1,0 +1,123 @@
+.image-content {
+    background-color: #fff; /* ボックス背景色 */
+    position:relative; /*配置(ここを基準に)*/
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);/*ボックス影*/
+    text-align: center;/*画像の中央配置*/
+}
+
+.image-content .content-title {
+    background-color: #A7B4AF; /* タイトル背景色 */
+    font-size: 1em;/* タイトル文字の大きさ */
+    color: #fff; /* タイトル文字色 */
+    padding:10px;/*タイトル余白*/
+    text-align: center;	/* タイトル中央寄せ */
+    /*position:absolute;	/* 配置(ここを動かす) */
+    top:0;	/*上から(0px)に配置 */
+    left:0; /*左から(0px)に配置 */
+    width:100%;/*横幅最大幅 */
+    }
+
+.image-content section img {
+    width: 70vw;
+    height: 45vw;
+    object-fit: contain;
+}
+
+p {
+    font-size: 1em;
+}
+
+h3 {
+  margin: auto;
+  max-width: 90vw;
+  text-align: center;
+}
+
+h4 {
+  margin: auto;
+  padding-top: 20px;
+  max-width: 80vw;
+  text-align: left;
+}
+
+.accordion {
+    max-width: 80vw;
+    margin-bottom: 7px;
+    border: 2px solid #2589d0;
+    border-radius: 5px;
+    margin: auto;
+  }
+  
+  .accordion summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em 2em;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2028%2028%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2214%22%20cy%3D%2214%22%20r%3D%2214%22%20style%3D%22fill%3A%232589d0%3B%22%2F%3E%0A%3C%2Fsvg%3E');
+    background-position: right calc(2em - 7px) center;
+    background-size: 22px;
+    background-repeat: no-repeat;
+    color: #2589d0;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  ul {
+    text-align: left;
+  }
+  
+  .accordion summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  .accordion summary::after {
+    transform: translateY(-25%) rotate(45deg);
+    width: 5px;
+    height: 5px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    content: '';
+    transition: transform .3s;
+  }
+  
+  .accordion[open] summary::after {
+    transform: rotate(225deg);
+  }
+  
+  .accordion p {
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    /*padding: 0 2em 1.5em;*/
+    color: #333333;
+    transition: transform .5s, opacity .5s;
+  }
+  
+  .accordion[open] p {
+    transform: none;
+    opacity: 1;
+    text-align: left;
+    padding: 1em 2em;
+  }
+
+  .container {
+    margin: 30px;
+  }
+  
+  input , select {
+    font-size: 16px;
+  }
+  
+  label {
+    display: block;
+  }
+  
+  .p-locality {
+    display: inline-block;
+    width: 250px;
+  }
+  
+#nextCollectionResult {
+    font-size: 100%;
+}

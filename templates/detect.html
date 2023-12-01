@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/detect.css">
+    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+    <script type = "text/javascript" src="../static/js/search.js"></script>
+    <script type = "text/javascript" src="../static/js/date.js"></script>
+
+    <title>Detection result</title>
+  </head>
+
+  <body>
+    <div class="image-content">
+      <div class = "content-title">判定結果</div>
+      <section>
+        <img src="{{ upload_img }}" alt="画像が表示出来ません">
+      </section>
+
+      <h3>これは
+      {% for i in garbage_name %}
+      {% if i == garbage_name[0] %}
+      {{ i }}
+      {% else %}
+      {{ '、' + i}}
+      {% endif %}
+      {% endfor %}
+      です。</h3>
+
+      {% for i in garbage_name %}
+      {% if i == '新聞紙' %}
+        <h4>{{i}}</h4>
+        <br>
+      <!--新聞紙-->
+        <details class="accordion">
+          <summary>出し方</summary>
+          <ul type="sqare">
+            <li>種類別に紐などでしばって出してください。</li>
+            <li>束ねる時は粘着テープは使用しないでください。</li>
+            <li>油の付いたものやひどく汚れたものは出さないでください（可燃ごみで出してください）</li>
+            <li>散乱しないよう必ずひもでしばって出してください</li>
+            <li>ダンボール箱を容器にして、新聞・雑誌を出さないでください。</li>
+            <li>折込チラシも新聞と一緒に束ねて出してください。</li>
+            <li>ビニール袋では出せません。紙製の袋で出す場合でも、ひもでしばって出してください。</li>
+          </ul>
+        </details>
+        <details class="accordion">
+          <summary>ゴミの行方/リサイクル製品</summary>
+          <p>回収された新聞紙は製紙工場へ運ばれます。そこで一度溶かされて、再度新たな紙へと生まれ変わります。</p>
+        </details>
+        <details class="accordion">
+          <summary>豆知識</summary>
+          <p>紙は約5~7回までリサイクルできます。紙は繊維でできています。リサイクルするときは、細かくして、叩いて、浸して、熱を加えて、新しい紙の繊維を作ります。この工程を経るたびに、繊維は少しずつ短くなり、やがて短くなりすぎて紙が作れなくなります</p>
+        </details>
+      {% endif %}
+      
+      {% if i == '衣類' %}
+        <h4>{{i}}</h4>
+        <br>
+      <!--衣類-->
+      <details class="accordion">
+        <summary>出し方</summary>
+        <ul type="sqare">
+          <li>容器または中身が見える袋に入れて出してください。 （※クリーニングのビニールカバーなど破れやすい袋は使用しないでください。）</li>
+          <li>通常のごみの収集日には一度に多量のごみは出せません。一度に多量のごみ（45リットルのごみ袋で5袋相当以上）を処理したい場合は有料となりますので、事前に清掃事務所にご相談ください。</li>
+        </ul>
+      </details>
+      <details class="accordion">
+        <summary>ゴミの行方/リサイクル製品</summary>
+        <p>リサイクルされた衣服のほとんどは、マットレスの詰め物にされたり、断熱材や掃除用のクロスになります。 最終的に新しい服に生まれ変わるのは、1%にも及びません。</p>
+      </details>
+      <details class="accordion">
+        <summary>豆知識</summary>
+        <p>衣類はリサイクルが難しいとされています。大きな理由は、洋服に使われる素材にあります。回収される衣服の65%が2種類以上の繊維を含む混紡素材により作られています。混紡素材をリサイクルする場合には、元の製品の品質には戻らず、品質低下を伴うカスケードリサイクルを行います。服をリサイクルしても服や繊維に戻ることはほとんどなく、服から服へのリサイクルは1%未満にとどまっています。
+          結果的に、リサイクルよりも捨てる方がコストがかからないため、大量廃棄につながっています。</p>
+      </details>
+      {% endif %}
+
+      {% if i == 'ダンボール' %}
+        <h4>{{i}}</h4>
+        <br>
+      <!--ダンボール-->
+      <details class="accordion">
+        <summary>出し方</summary>
+        <ul type="sqare">
+          <li>種類別に紐などでしばって出してください。</li>
+          <li>束ねる時は粘着テープは使用しないでください。</li>
+          <li>油の付いたものやひどく汚れたものは出さないでください（可燃ごみで出してください）</li>
+          <li>散乱しないよう必ずひもでしばって出してください</li>
+          <li>ダンボール箱を容器にして、新聞・雑誌を出さないでください。</li>
+          <li>大きいダンボールは、通行の妨げにならないような大きさにして出してください。</li>
+          <li>ビニール袋では出せません。紙製の袋で出す場合でも、ひもでしばって出してください。</li>
+          <li>ダンボールには他の紙類は入れないでください。</li>
+        </ul>
+      </details>
+      <details class="accordion">
+        <summary>ゴミの行方/リサイクル製品</summary>
+        <p>再び段ボールに生まれ変わります。</p>
+      </details>
+      <details class="accordion">
+        <summary>豆知識</summary>
+        <p>段ボールは100%リサイクル可能で、原材料の多くを国内で手当て出来るめずらしい存在です。日本では回収率95%を誇り、とても地球に優しい資源です。</p>
+      </details>
+      {% endif %}
+
+      {% if i == 'ペットボトル' %}
+        <h4>{{i}}</h4>
+        <br>
+      <!--ペットボトル-->
+      <details class="accordion">
+        <summary>出し方</summary>
+        <ul type="sqare">
+          <li>回収曜日の朝8時までにお出しください。</li>
+          <li>軽くすすいでからお出しください。</li>
+          <li>袋等から出してお出しください。</li>
+          <li>ペットボトルはキャップ・ラベルをはずして、足などで潰してお出しください。</li>
+          <li>ごみは絶対に入れないでください。</li>
+        </ul>
+      </details>
+      <details class="accordion">
+        <summary>ゴミの行方/リサイクル製品</summary>
+        <p>多くがトレイや紙パックなどの原料や、シャツ使われる繊維にリサイクルされます。再びペットボトルになる割合は13%と意外と少ないのです。</p>
+      </details>
+      <details class="accordion">
+        <summary>豆知識</summary>
+        <p>リサイクルされたペットボトルキャップは、実は意外な場所で活躍しています。回収されたキャップは回収業者によってリサイクル資源として売られます。その売却益がJCVという団体に寄付され、ワクチンに変わっています。</p>
+      </details>
+      {% endif %}
+
+      {% if i == '空き缶' %}
+        <h4>{{i}}</h4>
+        <br>
+      <!--空き缶-->
+      <details class="accordion">
+        <summary>出し方</summary>
+        <ul type="sqare">
+          <li>回収曜日の朝8時までにお出しください。</li>
+          <li>軽くすすいでからお出しください。</li>
+          <li>袋等から出してお出しください。</li>
+          <li>ごみは絶対に入れないでください。</li>
+        </ul>
+      </details>
+      <details class="accordion">
+        <summary>ゴミの行方/リサイクル製品</summary>
+        <p>アルミ缶は缶や各種機械部品などにリサイクルされ、スチール缶は主に家電などに使われる銅板などにリサイクルされます。</p>
+      </details>
+      <details class="accordion">
+        <summary>豆知識</summary>
+        <p>缶にはアルミ缶とスチール缶の大きく２種類があります。スチール缶はコーヒーや紅茶、缶に詰めた後に、高圧や高熱をかけて殺菌する必要がある飲料の容器として解く使われています。アルミ缶は炭酸によって雑菌の発生が抑えられる炭酸飲料やビールによく使われています。</p>
+      </details>
+      {% endif %}
+
+      {% if i == 'びん' %}
+        <h4>{{i}}</h4>
+        <br>
+      <!--びん-->
+      <details class="accordion">
+        <summary>出し方</summary>
+        <ul type="sqare">
+          <li>回収曜日の朝8時までにお出しください。</li>
+          <li>軽くすすいでからお出しください。</li>
+          <li>袋等から出してお出しください。</li>
+          <li>びんは栓をとってからお入れください。</li>
+          <li>ごみは絶対に入れないでください。</li>
+          <li>割れているもの、欠けているものは出さないでください。</li>
+        </ul>
+      </details>
+      <details class="accordion">
+        <summary>ゴミの行方/リサイクル製品</summary>
+        <p>ほとんどが再びガラスビンにリサイクルまたは再利用されるが、住宅用の断熱材として使用されているグラスウール、防犯用の砂利、ビー玉なども作られています。</p>
+      </details>
+      <details class="accordion">
+        <summary>豆知識</summary>
+        <p>ガラスびんはリサイクルされたのち、全体として70.6%が再びガラスびんに生まれ変わります。日常で使われているガラスびんの中身は70%がリサイクル原料です。</p>
+      </details>
+      {% endif %}
+
+      {% if i == 'プラスチック容器' %}
+        <h4>{{i}}</h4>
+        <br>
+      <!--プラスチック容器-->
+      <details class="accordion">
+        <summary>出し方</summary>
+        <ul>
+          <li>汚れを水ですすぐなどして落としてください。汚れやにおいが落ちない場合は可燃ごみでお出しください。</li>
+          <li>まとめて同じ袋に入れて出してください。（二重袋にしないでください）</li>
+          <li>プラスチック以外のもの（ネジなどの金属部品・電池）などが少量でも入っているものは、リサイクルに適さないため回収できません。無理な取り外しは、ケガをする恐れがあるのでおやめください。</li>
+        </ul>
+      </details>
+      <details class="accordion">
+        <summary>ゴミの行方/リサイクル製品</summary>
+        <p>再びプラスチック容器として、卵パックやトレーに生まれ変わります。</p>
+      </details>
+      <details class="accordion">
+        <summary>豆知識</summary>
+        <p>汚れた容器（例：ハミガキ、マヨネーズ、ケチャップ、納豆の容器）はリサイクルの過程で周囲に汚染が広がり、清潔なプラスチックも再利用できなくなります。 リサイクルの効率と価値を維持するためには、基準を満たすためにきれいにする必要があります。</p>
+      </details>
+      {% endif %}
+
+      {% if i == '電池' %}
+        <h4>{{i}}</h4>
+        <br>
+      <!--電池-->
+      <details class="accordion">
+        <summary>出し方</summary>
+        <ul>
+          <li>容器または中身の見える袋に入れて出してください。</li>
+          <li>ボタン型電池やニカド充電池は各回収ボックスへ出してください。</li>
+          <li>水銀が入っている乾電池はリサイクル清掃課などの窓口へお持ちこみください。なお、平成4年以降の国産乾電池に水銀は使用されていませんので不燃ごみに出してください。</li>
+        </ul>
+      </details>
+      <details class="accordion">
+        <summary>ゴミの行方/リサイクル製品</summary>
+        <p>不要になった小型二次電池からは、カドミウムやコバルト、ニッケルといった金属が取り出され再利用されます。</p>
+      </details>
+      <details class="accordion">
+        <summary>豆知識</summary>
+        <p>電池には一次電池と二次電池があります。一次電池は乾電池のように充電ができない電池です。二次電池はスマホ用電池みたいに何回も繰り返し使用できる電池です。</p>
+      </details>
+      {% endif %}
+
+      {% if i == 'プラスチックバッグ' %}
+        <h4>{{i}}</h4>
+        <br>
+      <!--プラスチックバッグ-->
+      <details class="accordion">
+        <summary>出し方</summary>
+        <ul>
+          <li>汚れを水ですすぐなどして落としてください。汚れやにおいが落ちない場合は可燃ごみでお出しください。</li>
+          <li>まとめて同じ袋に入れて出してください。（二重袋にしないでください）</li>
+        </ul>
+      </details>
+      <details class="accordion">
+        <summary>ゴミの行方/リサイクル製品</summary>
+        <p>ビニール袋、トレー、お菓子の袋などを、水切りネットやゴミ袋、植木鉢などに生まれ変わっています。</p>
+      </details>
+      <details class="accordion">
+        <summary>豆知識</summary>
+        <p>ビニール袋は口が結んであると，プラスチック資源としてリサイクルする際に機械で破袋できません。
+          手選別により内袋として使われているビニール袋を一つ一つ破いて中身を確認しなければならず，分別作業のさまたげになっています。ビニ―ル袋を内袋として使う場合は口を結ばないで捨てましょう。</p>
+      </details>
+      {% endif %}
+      {% endfor %}
+      <br>
+      <details class="accordion">
+        <summary>次の収集日を調べる</summary>
+          <label>東京都北区  ＜町域＞
+            <select id="street" onchange="DisplayPullDown()">
+              <option hidden>選択してください</option>
+              <option value="赤羽">赤羽</option>
+              <option value="赤羽北">赤羽北</option>
+              <option value="赤羽台">赤羽台</option>
+              <option value="赤羽西">赤羽西</option>
+              <option value="赤羽南">赤羽南</option>
+              <option value="岩渕町">岩渕町</option>
+              <option value="浮間">浮間</option>
+              <option value="王子">王子</option>
+              <option value="王子本町">王子本町</option>
+              <option value="上十条">上十条</option>
+              <option value="神谷">神谷</option>
+              <option value="岸町">岸町</option>
+              <option value="桐ヶ丘">桐ヶ丘</option>
+              <option value="志茂">志茂</option>
+              <option value="上十条">上十条</option>
+              <option value="十条仲原">十条中原</option>
+              <option value="豊島">豊島</option>
+              <option value="中十条">中十条</option>
+              <option value="西が丘">西が丘</option>
+              <option value="東十条">東十条</option>
+              <option value="堀船">堀船</option>
+            </select>
+          </label>
+          <label for="extended-addres">詳細な住所:</label>
+          <select id="extended-addres" onchange="getAddres(this)">
+            <option value="">選択してください</option>
+          </select>
+          <script>
+            var x = '{{ i }}'; // garbage_nameの値をJavaScript変数に渡す
+            var garbage_name = '{{ garbage_name }}';
+            console.log(x);
+            console.log(garbage_name );
+          </script>
+          <script src="../static/js/date.js"></script>
+          <script src="../static/js/listModule.js"></script>
+          <p id="nextCollectionResult"></p>
+      </details>
+
+
+      <footer>
+          <button onclick="history.back()">戻る</button>
+      </footer>
+    </div>
+  </body>
+</html>
